@@ -1,0 +1,18 @@
+# Talk2View
+
+> Add AI-powered natural-language control to your app: register tools, your users talk to the assistant, it calls your tools and your app runs them. B2B2B/B2B2C platform, currently private beta.
+
+## Docs
+- [Overview](https://docs.talk2view.com/): what Talk2View is and where to start
+- [Getting started](https://docs.talk2view.com/getting-started): install, drop in the packaged chat, ship
+- [Authentication](https://docs.talk2view.com/authentication): the partner key and end-user sign-in
+- [Concepts](https://docs.talk2view.com/concepts): tools, the interrupt/resume loop, sessions
+- [Troubleshooting](https://docs.talk2view.com/troubleshooting): common first-run issues
+
+## SDKs and reference
+- [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript): @talk2view/sdk on npm
+- [Python SDK](https://pypi.org/project/talk2view/): talk2view on PyPI (beta)
+- [API reference](https://engine.talk2view.com/docs): REST + SSE
+
+## Get access
+- [Request a partner key](https://talk2view.com/resources/contact?subject=partner-key)

@@ -1,0 +1,31 @@
+/**
+ * Global styles. Infima variables overridden for the Talk2View brand
+ * (teal accent, Space Grotesk type).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* A darker teal than the brand's #26C8B8 so link/button text clears contrast on white. */
+  --ifm-color-primary: #0f8a7e;
+  --ifm-color-primary-dark: #0e7c71;
+  --ifm-color-primary-darker: #0d756b;
+  --ifm-color-primary-darkest: #0a6158;
+  --ifm-color-primary-light: #11988b;
+  --ifm-color-primary-lighter: #129f91;
+  --ifm-color-primary-lightest: #15b4a4;
+  --ifm-font-family-base: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode: the bright brand teal reads well on dark surfaces. */
+[data-theme='dark'] {
+  --ifm-color-primary: #3dd6c6;
+  --ifm-color-primary-dark: #2bcfbd;
+  --ifm-color-primary-darker: #26c8b8;
+  --ifm-color-primary-darkest: #1fa699;
+  --ifm-color-primary-light: #57dbcd;
+  --ifm-color-primary-lighter: #63ddd0;
+  --ifm-color-primary-lightest: #86e5db;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
