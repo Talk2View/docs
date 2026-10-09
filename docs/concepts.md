@@ -36,8 +36,23 @@ tool with a name, a description, a parameter schema, and an `execute` function:
 
 When the assistant decides to call a tool, the agent **pauses**, the call is sent to
 your client, your `execute` runs locally, your result is sent back, and the agent
-**resumes**. Tools always run in your app — Talk2View never executes them server-side
-— so the assistant can only do what you've given it.
+**resumes**. The tools you register always run in your app, through this pause and
+resume, so inside your app the assistant can only do what your tools let it do.
+
+### Built-in tools
+
+Talk2View also has tools of its own, which run on its servers rather than in your
+app:
+
+- **Skills and planning** — always on. The assistant can look up and load skills
+  (instructions for particular tasks) and keep a to-do list for multi-step work.
+- **Web search, maps and image generation** — only if you turn them on in the
+  dashboard. Maps and image generation are for signed-in users, not guests. Image
+  generation also needs a client that declares it can display images; the
+  TypeScript SDK doesn't declare this.
+- **Scheduling and email** — only if you turn them on in the dashboard, and only for
+  end-users who have connected their own scheduling or email account. Booking
+  meetings and sending email also depend on the end-user's Talk2View plan.
 
 ## Models and configuration
 
