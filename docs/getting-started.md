@@ -64,9 +64,10 @@ extra confirmation screen. See [Authentication](./authentication.md).
 ## Going further
 
 Building headless, outside React, or on the desktop (e.g. Python)? The lower-level
-`Talk2View` client, tool registration, and the streaming event API are covered in the
-SDK repositories and the API reference.
+`Talk2View` client, tool registration, and the streamed chat events are covered in the
+SDK repositories. The API reference lists the HTTP endpoints but doesn't describe the
+events in the stream.
 
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — source, runnable examples, full API
 - [Python SDK](https://pypi.org/project/talk2view/) — `pip install talk2view` (beta)
-- [API reference](https://engine.talk2view.com/docs) — REST + SSE
+- [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK

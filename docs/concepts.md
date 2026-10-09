@@ -63,5 +63,7 @@ allowed origins, guest access, voice, and web search.
 ## Streaming
 
 Replies stream back as events (text chunks, tool calls, completion). The packaged chat
-renders them for you; if you're building your own UI, the SDK and the
-[API reference](https://engine.talk2view.com/docs) document the event stream.
+renders them for you. If you're building your own UI, let the SDK read the stream: the
+`Talk2View` client's `chat()` method yields typed events (see the `ChatEvent` type
+exported from `@talk2view/sdk`). The [API reference](https://engine.talk2view.com/docs)
+lists the HTTP endpoints, but it doesn't describe the events in the stream.
