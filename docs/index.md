@@ -11,7 +11,7 @@ Talk2View lets you add an AI assistant that can **act inside your app** — not 
 chat — in a few lines of code. You register tools; your users talk to the assistant;
 it calls your tools and your app runs them.
 
-:::info Private beta
+:::info[Private beta]
 Talk2View is currently in private beta. [Request a partner key](https://talk2view.com/resources/contact?subject=partner-key)
 to get started — we'll set you up.
 :::
