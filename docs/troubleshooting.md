@@ -15,9 +15,10 @@ your key. See [Authentication](./authentication.md).
 
 ### "Request a partner key" / my key is rejected
 
-Double-check you're using your `pk_live_…` **partner key** (there is no secret key),
-and that you're calling from an **allowed origin** registered in the dashboard. A
-browser key used from an unregistered origin is refused.
+Double-check you're using your `pk_live_…` **partner key** (there is no secret key).
+By default the key works from any website. If requests are refused with
+`origin_not_allowed`, your key is set to accept browser requests only from your
+**Allowed websites**: add the site in the dashboard.
 
 ### Sign-in popup doesn't work on `localhost`
 
