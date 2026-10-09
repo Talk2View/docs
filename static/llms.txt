@@ -11,7 +11,7 @@
 
 ## SDKs and reference
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript): @talk2view/sdk on npm
-- [Python SDK](https://pypi.org/project/talk2view/): talk2view on PyPI (beta)
+- Python SDK: coming soon, not yet available
 - [API reference](https://engine.talk2view.com/docs): the HTTP endpoints. It does not describe the streamed (SSE) chat events; the TypeScript SDK parses them (see its ChatEvent type)
 
 ## Get access

@@ -26,5 +26,5 @@ to get started — we'll set you up.
 ## SDKs & reference
 
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — `@talk2view/sdk` on npm
-- [Python SDK](https://pypi.org/project/talk2view/) — `talk2view` on PyPI (beta)
+- Python SDK — coming soon
 - [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK

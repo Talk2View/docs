@@ -90,7 +90,6 @@ const config: Config = {
           items: [
             {label: 'Request a partner key', href: 'https://talk2view.com/resources/contact?subject=partner-key'},
             {label: 'TypeScript SDK (npm)', href: 'https://www.npmjs.com/package/@talk2view/sdk'},
-            {label: 'Python SDK (PyPI)', href: 'https://pypi.org/project/talk2view/'},
             {label: 'API reference', href: 'https://engine.talk2view.com/docs'},
           ],
         },
