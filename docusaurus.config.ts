@@ -100,6 +100,13 @@ const config: Config = {
             {label: 'GitHub', href: 'https://github.com/Talk2View'},
           ],
         },
+        {
+          title: 'Legal',
+          items: [
+            {label: 'Terms of Use', href: 'https://talk2view.com/legal/terms-of-use'},
+            {label: 'Privacy Policy', href: 'https://talk2view.com/legal/privacy-policy'},
+          ],
+        },
       ],
       copyright: 'Copyright © 2026 A2B Technology Corporation Pty Ltd.',
     },

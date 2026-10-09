@@ -16,6 +16,9 @@ and we'll get you set up. You receive one key:
 
 That one key is all you need — Talk2View does not issue a partner secret key.
 
+Before you build, read [Intended use](./intended-use.md): Talk2View isn't a medical
+device, and your app shouldn't send it patient data.
+
 ## 2. Install the SDK
 
 ```bash

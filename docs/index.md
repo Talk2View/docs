@@ -22,6 +22,7 @@ to get started — we'll set you up.
 - **[Authentication](./authentication.md)** — your partner key + how your users sign in.
 - **[Concepts](./concepts.md)** — how the pieces fit: tools, the interrupt/resume loop, sessions.
 - **[Troubleshooting](./troubleshooting.md)** — the usual first-run snags.
+- **[Intended use](./intended-use.md)** — what Talk2View is for, and what data to keep out of it.
 
 ## SDKs & reference
 
