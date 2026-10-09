@@ -20,14 +20,15 @@ Talk2View account, or set up guest access: see
 ### "Request a partner key" / my key is rejected
 
 Double-check you're using your `pk_live_…` **partner key** (there is no secret key).
-By default the key works from any website. If requests are refused with
-`origin_not_allowed`, your key is set to accept browser requests only from your
-**Allowed websites**: add the site in the dashboard.
+By default the key works from any website. If a request is refused with
+`origin_not_allowed`, either your key is set to accept browser requests only from your
+**Allowed websites** (add the site in the dashboard), or popup sign-in was started from
+a page that isn't a deployed `https://` site, such as `localhost`.
 
 ### Sign-in popup doesn't work on `localhost`
 
-Popup sign-in is attested by origin and does not run on `localhost`. During local
-development, either enable guest access or sign in from your registered origin.
+Popup sign-in with Google or Apple only runs on a deployed `https://` site, so the chat
+doesn't offer it on `localhost`. While you develop, sign in with email and password.
 
 ### Still stuck?
 

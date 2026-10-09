@@ -61,7 +61,7 @@ app:
 
 The AI workflow itself is Talk2View's — you don't rebuild it. What you control from the
 dashboard: which model to use, a system prompt, which tools and skills are available,
-allowed origins, guest access, voice, and web search.
+allowed websites (for popup sign-in), guest access, voice, and web search.
 
 ## Streaming
 

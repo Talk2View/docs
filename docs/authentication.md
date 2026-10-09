@@ -43,6 +43,10 @@ Add each website that hosts your chat, as its exact address (`https://`, the dom
 and nothing after it), to skip that screen. Popup sign-in doesn't run on `localhost`,
 so use email and password while you develop.
 
+Popup sign-in also needs the page that hosts your chat to send a `Referer` header, as
+browsers do by default. If your site's `Referrer-Policy` withholds it, Google and Apple
+sign-in are hidden and the SDK logs why.
+
 By default, the list doesn't limit where your key works: the API accepts requests
 from any website. Talk2View can switch on a stricter setting for a key, which refuses
 browser requests from websites that aren't listed and offers popup sign-in only on
