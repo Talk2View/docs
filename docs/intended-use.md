@@ -28,9 +28,9 @@ Talk2View doesn't detect, remove or block this kind of data for you. What your u
 type, attach or say is sent to third-party AI and speech-to-text providers to produce
 a reply, and those providers handle it under their own terms.
 
-## Full terms
+## Terms and privacy
 
-This page is a summary. The full terms are in:
+This page summarises parts of these documents. Read them in full:
 
 - [Terms of Use](https://talk2view.com/legal/terms-of-use)
 - [Privacy Policy](https://talk2view.com/legal/privacy-policy)
