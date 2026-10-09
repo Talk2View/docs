@@ -24,7 +24,9 @@ tool with a name, a description, a parameter schema, and an `execute` function:
   description: 'Filter the current view by status.',
   parameters: {
     type: 'object',
-    properties: { status: { type: 'string', enum: ['open', 'closed'] } },
+    properties: {
+      status: { type: 'string', description: 'Which items to show.', enum: ['open', 'closed'] },
+    },
     required: ['status'],
   },
   execute: async (args) => {
