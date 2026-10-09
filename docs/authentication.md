@@ -52,9 +52,13 @@ says so.
 ## Your end-users
 
 End-users sign in with a **Talk2View account**, and the SDK attaches their token to
-requests. If you'd rather let people use the assistant without signing in, ask us to
-turn on **guest access** for your key — then the SDK starts an anonymous session for
-visitors automatically.
+requests.
+
+To let people use the assistant without signing in, turn on **Anonymous access** under
+**Settings** in the dashboard and ask us to set a daily limit on new guests for your
+key. Guest access stays off until that limit is set. If the dashboard says guests need
+a captcha check, we'll set that up with you; if not, the SDK starts a guest session
+for visitors who aren't signed in.
 
 Sessions are scoped to `(partner, user)`, so the same person using two different
 partner apps gets separate, isolated conversations.

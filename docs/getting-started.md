@@ -60,9 +60,10 @@ interrupt/resume cycle. See [Concepts](./concepts.md) for how that loop works.
 ## 4. Who can chat
 
 End-users sign in with a Talk2View account. If you'd rather let anyone chat without
-signing in, ask us to enable **guest access** for your key. For Google and Apple
-sign-in, add your site to **Allowed websites** in the dashboard so your users skip an
-extra confirmation screen. See [Authentication](./authentication.md).
+signing in, turn on **Anonymous access** under **Settings** in the dashboard and ask
+us to set a daily limit on new guests for your key. For Google and Apple sign-in, add
+your site to **Allowed websites** in the dashboard so your users skip an extra
+confirmation screen. See [Authentication](./authentication.md).
 
 ## Going further
 

@@ -7,11 +7,15 @@ sidebar_position: 5
 
 The usual first-run snags, by symptom.
 
-### The chat loads but never answers / nothing happens on a message
+### The chat asks people to sign in, or nothing happens on a message
 
-The most common cause is **guest access being off** while no one is signed in. Either
-sign the user in with their Talk2View account, or ask us to enable guest access for
-your key. See [Authentication](./authentication.md).
+By default, when no one is signed in, the SDK tries to start a guest session. If
+Talk2View refuses it (guest access isn't set up for your key, today's limit on new
+guests is used up, or guests need a captcha check), the packaged chat asks people to
+sign in. With the lower-level `Talk2View` client, `chat()` ends without a reply and
+the client emits an `anonymousUnavailable` event. Sign the user in with their
+Talk2View account, or set up guest access: see
+[Authentication](./authentication.md#your-end-users).
 
 ### "Request a partner key" / my key is rejected
 
