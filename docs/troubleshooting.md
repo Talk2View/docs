@@ -28,4 +28,4 @@ development, either enable guest access or sign in from your registered origin.
 ### Still stuck?
 
 - Check the [API reference](https://engine.talk2view.com/docs) for request and response shapes. It doesn't describe the streamed chat events; the SDK parses those for you.
-- [Get in touch](https://talk2view.com/resources/contact) — we read every message during the beta.
+- [Get in touch](https://talk2view.com/resources/contact).
