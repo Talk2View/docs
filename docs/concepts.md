@@ -46,15 +46,16 @@ resume, so inside your app the assistant can only do what your tools let it do.
 Talk2View also has tools of its own, which run on its servers rather than in your
 app:
 
-- **Skills and planning** — always on. The assistant can look up and load skills
-  (instructions for particular tasks) and keep a to-do list for multi-step work.
+- **Skills and planning** — on by default. The assistant can look up and load skills
+  (instructions for particular tasks, including the ones you write on the dashboard's
+  **Skills** page) and keep a to-do list for multi-step work.
 - **Web search, maps and image generation** — only if you turn them on in the
   dashboard. Maps and image generation are for signed-in users, not guests. Image
-  generation also needs a client that declares it can display images; the
-  TypeScript SDK doesn't declare this.
-- **Scheduling and email** — only if you turn them on in the dashboard, and only for
-  end-users who have connected their own scheduling or email account. Booking
-  meetings and sending email also depend on the end-user's Talk2View plan.
+  generation also needs a client that says it can show images; `@talk2view/sdk`
+  0.21.3 doesn't yet, so it isn't available through the SDK.
+- **Scheduling and email** — these work only after an end-user connects their own
+  scheduling or email account for your app, and the SDK can't connect one yet. So you
+  can't offer them through the SDK, even if you turn them on in the dashboard.
 
 ## Models and configuration
 
