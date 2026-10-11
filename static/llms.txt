@@ -8,11 +8,12 @@
 - [Authentication](https://docs.talk2view.com/authentication): the partner key and end-user sign-in
 - [Concepts](https://docs.talk2view.com/concepts): tools, the interrupt/resume loop, sessions
 - [Troubleshooting](https://docs.talk2view.com/troubleshooting): common first-run issues
+- [Intended use](https://docs.talk2view.com/intended-use): not a medical device and not for diagnosis or treatment; don't send PHI or other patient-identifiable data; links to the Terms of Use and Privacy Policy
 
 ## SDKs and reference
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript): @talk2view/sdk on npm
-- [Python SDK](https://pypi.org/project/talk2view/): talk2view on PyPI (beta)
-- [API reference](https://engine.talk2view.com/docs): REST + SSE
+- Python SDK: coming soon, not yet available
+- [API reference](https://engine.talk2view.com/docs): the HTTP endpoints. It does not describe the streamed (SSE) chat events; the TypeScript SDK parses them (see its ChatEvent type)
 
 ## Get access
 - [Request a partner key](https://talk2view.com/resources/contact?subject=partner-key)

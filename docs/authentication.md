@@ -26,17 +26,43 @@ partner secret key; there is no `sk_` key to keep private.
 
 It's sent on each request as the `X-T2V-Partner-Key` header.
 
-### Lock it to your site
+### Allowed websites and sign-in
 
-Because the partner key ships in the browser, register your app's **allowed origins**
-in the dashboard. Once you do, the key only works from those origins.
+Your partner key is a public identifier, not a secret: anyone can copy it from your
+app and use it. What protects your users' data is end-user sign-in. Every
+conversation belongs to one end-user, and the partner key on its own can't read it.
+
+The **Allowed websites** list, under **Settings** in the dashboard, is for popup
+sign-in with Google or Apple:
+
+- On a listed website, sign-in goes straight through.
+- On any other `https://` website, sign-in still works, but your users first see a
+  Talk2View screen that names the site and asks them to confirm it.
+
+Add each website that hosts your chat, as its exact address (`https://`, the domain,
+and nothing after it), to skip that screen. Popup sign-in doesn't run on `localhost`,
+so use email and password while you develop.
+
+Popup sign-in also needs the page that hosts your chat to send a `Referer` header, as
+browsers do by default. If your site's `Referrer-Policy` withholds it, Google and Apple
+sign-in are hidden and the SDK logs why.
+
+By default, the list doesn't limit where your key works: the API accepts requests
+from any website. Talk2View can switch on a stricter setting for a key, which refuses
+browser requests from websites that aren't listed and offers popup sign-in only on
+listed ones. It isn't a dashboard setting; if it's on for your key, the dashboard
+says so.
 
 ## Your end-users
 
 End-users sign in with a **Talk2View account**, and the SDK attaches their token to
-requests. If you'd rather let people use the assistant without signing in, ask us to
-turn on **guest access** for your key — then the SDK starts an anonymous session for
-visitors automatically.
+requests.
+
+To let people use the assistant without signing in, turn on **Anonymous access** under
+**Settings** in the dashboard and ask us to set a daily limit on new guests for your
+key. Guest access stays off until that limit is set. If the dashboard says guests need
+a captcha check, we'll set that up with you; if not, the SDK starts a guest session
+for visitors who aren't signed in.
 
 Sessions are scoped to `(partner, user)`, so the same person using two different
 partner apps gets separate, isolated conversations.

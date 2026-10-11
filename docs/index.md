@@ -11,7 +11,7 @@ Talk2View lets you add an AI assistant that can **act inside your app** — not 
 chat — in a few lines of code. You register tools; your users talk to the assistant;
 it calls your tools and your app runs them.
 
-:::info Private beta
+:::info[Private beta]
 Talk2View is currently in private beta. [Request a partner key](https://talk2view.com/resources/contact?subject=partner-key)
 to get started — we'll set you up.
 :::
@@ -22,9 +22,10 @@ to get started — we'll set you up.
 - **[Authentication](./authentication.md)** — your partner key + how your users sign in.
 - **[Concepts](./concepts.md)** — how the pieces fit: tools, the interrupt/resume loop, sessions.
 - **[Troubleshooting](./troubleshooting.md)** — the usual first-run snags.
+- **[Intended use](./intended-use.md)** — what Talk2View is for, and what data to keep out of it.
 
 ## SDKs & reference
 
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — `@talk2view/sdk` on npm
-- [Python SDK](https://pypi.org/project/talk2view/) — `talk2view` on PyPI (beta)
-- [API reference](https://engine.talk2view.com/docs) — REST + SSE
+- Python SDK — coming soon
+- [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK
