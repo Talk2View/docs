@@ -98,6 +98,7 @@ const config: Config = {
           items: [
             {label: 'talk2view.com', href: 'https://talk2view.com'},
             {label: 'GitHub', href: 'https://github.com/Talk2View'},
+            {label: 'Report a security problem', href: 'https://github.com/Talk2View/docs/blob/main/SECURITY.md'},
           ],
         },
         {
