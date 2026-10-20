@@ -1,7 +1,7 @@
 ---
 title: Intended use and data handling
 sidebar_label: Intended use
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Intended use and data handling
