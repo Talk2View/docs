@@ -81,6 +81,7 @@ fields. Those types are marked *stream* below.
 | `scribe_disabled` | 403 | This dictation model is not turned on for this partner. |
 | `sign_in_required` | 403 | A guest (anonymous) user called a route that needs a signed-in account, such as the direct model calls. |
 | `voice_disabled` | 403 | Realtime voice is not turned on for this partner. |
+| `voice_model_unavailable` | 403 | No voice model this app allows can take the call right now. Show the message. |
 | `attachment_not_found` | 404 | An attachment the message refers to does not exist or has expired. |
 | `not_found` | 404 | No such route, or the session, skill or record it names does not exist. |
 | `session_not_found` | 404 | The chat session is gone (often after a deploy). Start a new one. |
