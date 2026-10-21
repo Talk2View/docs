@@ -90,45 +90,51 @@ shows "Voice isn’t available right now." That is also the error's message.
 
 ## Content-Security-Policy
 
-If your page sets a Content-Security-Policy, allow what each voice model your app offers
-needs. A page with no Content-Security-Policy needs nothing. As of `@talk2view/sdk` 0.23.0:
+If your page sets a Content-Security-Policy, allow what every voice call needs, and what
+each voice model your app offers adds. A page with no Content-Security-Policy needs
+nothing. As of `@talk2view/sdk` 0.23.0:
 
-| Voice model | `connect-src` | `script-src` |
+| | `connect-src` | `script-src` |
 |---|---|---|
-| Gemini Live | `https://engine.talk2view.com`, `https://c.daily.co` | `'unsafe-eval'`, `blob:` |
-| ElevenLabs | `wss://livekit.rtc.elevenlabs.io`, `https://livekit.rtc.elevenlabs.io` | `blob:` (optional) |
+| Every voice call | `https://engine.talk2view.com`, `https://c.daily.co` | `'unsafe-eval'`, `blob:` |
+| Gemini Live adds | nothing | nothing |
+| ElevenLabs adds | `wss://livekit.rtc.elevenlabs.io`, `https://livekit.rtc.elevenlabs.io` | nothing |
 
-Audio worklets are governed by `script-src`, not `worker-src`, so neither voice model needs
-a `worker-src` source. Your bundler puts each voice model's code in separate chunks that
-load from your own origin on the first call that uses them, so a page that only chats
-never loads either.
+Every voice call needs Daily's sources, ElevenLabs included, because the SDK opens the
+microphone before the engine has chosen the voice model. Audio worklets are governed by
+`script-src`, not `worker-src`, so no voice call needs a `worker-src` source. Your bundler
+puts the voice code in separate chunks that load from your own origin on the first call
+that uses them, so a page that only chats never loads any of it.
 
-**Gemini Live.** Starting a call, the SDK's WebRTC transport has Daily's library download
-its call engine from `https://c.daily.co` and run it through `Function()`, and loads its
-microphone and playback audio worklets from `blob:` URLs. So Gemini Live needs
-`https://c.daily.co` in `connect-src`, and `'unsafe-eval'` and `blob:` in `script-src`;
-without any of them, no call starts. The call's offer then goes to the voice URL your
-engine returns, which on Talk2View's hosted engine is the engine itself, so `connect-src`
-must allow `https://engine.talk2view.com` too. If Daily's download fails, its library
-tries to report the error to Daily's own error tracking; you can leave that blocked.
+**Every voice call.** The SDK opens the microphone through Daily's library, the media
+layer of Gemini Live's WebRTC transport. Opening it, Daily's library downloads its call
+engine from `https://c.daily.co`, runs it through `Function()`, and starts an audio
+worklet that measures the microphone's level. Without `https://c.daily.co` in
+`connect-src` or `'unsafe-eval'` in `script-src`, no voice call starts, on either voice
+model, and nothing falls back. If Daily's download fails, its library tries to report the
+error to Daily's own error tracking; you can leave that blocked.
+
+**Gemini Live** adds nothing: the call's offer goes to the voice URL your engine returns,
+which on Talk2View's hosted engine is `https://engine.talk2view.com` itself.
 
 **ElevenLabs.** The SDK connects to ElevenLabs' LiveKit service at
 `wss://livekit.rtc.elevenlabs.io`. It also makes plain HTTPS requests to
 `https://livekit.rtc.elevenlabs.io`, to find out what went wrong when a connection fails
-and to check the connection when the browser goes offline or comes back online. Those are
-the only ElevenLabs hosts it needs: it never contacts `api.elevenlabs.io`, and it loads
-nothing from a CDN. It also asks your engine to start and end each call, which the chat
-already allows.
+and to check the connection when the browser reports it has gone offline or come back
+online. Those are the only hosts it adds: it never contacts `api.elevenlabs.io`, and it
+loads nothing from a CDN. It also asks your engine to start and end each call, which the
+chat already allows.
 
-ElevenLabs needs nothing in `script-src` for the call itself. Its client loads one audio
-worklet, which copies the assistant's audio for a callback the SDK doesn't use. It loads
-it from a `blob:` URL and, where the browser refuses that (Safari inside an iframe), from
-a `data:` URL. If both are blocked, the client logs "Failed to set up audio capture" and
-the call carries on, the voice playing as usual. Allow `blob:` to keep that warning, and
-the CSP violation report behind it, out of your console. Add `data:` only if your chat
-runs inside an iframe that Safari end-users reach and you want it quiet there too.
+ElevenLabs adds nothing to `script-src`. Its client loads one audio worklet, which copies
+the assistant's audio for a callback the SDK doesn't use, from a `blob:` URL, which every
+voice call allows already. Where the browser refuses that (Safari inside an iframe), it
+tries a `data:` URL. If that's blocked too, the client logs "Failed to set up audio
+capture" and the call carries on, the voice playing as usual. Add `data:` only if your
+chat runs inside an iframe that Safari end-users reach and you want that warning gone
+there too.
 
-If a host is blocked, an ElevenLabs call can't connect. The SDK tells the engine and asks
-for the call again on another voice model, once. That is Gemini Live where your app offers
-it, with the note "Using Gemini Live — ElevenLabs couldn’t connect." Where it doesn't, the
-end-user sees "Voice isn’t available right now."
+If an ElevenLabs host is blocked, an ElevenLabs call can't connect. The SDK tells the
+engine and asks for the call again on another voice model, once. That is Gemini Live where
+your app offers it, with the note "Using Gemini Live — ElevenLabs couldn’t connect." Where
+it doesn't, the end-user sees "Voice isn’t available right now." A blocked Daily source is
+different: no voice call starts at all, on either voice model.
