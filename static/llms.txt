@@ -7,7 +7,7 @@
 - [Getting started](https://docs.talk2view.com/getting-started): install, drop in the packaged chat, ship
 - [Authentication](https://docs.talk2view.com/authentication): the partner key and end-user sign-in
 - [Concepts](https://docs.talk2view.com/concepts): tools, the interrupt/resume loop, sessions
-- [Voice](https://docs.talk2view.com/voice): the voice button, the Gemini Live and ElevenLabs voice models, partner controls, and CSP hosts
+- [Voice](https://docs.talk2view.com/voice): the voice button, the Gemini Live and ElevenLabs voice models, partner controls, Eleven Realtime, languages, call captions, and CSP hosts
 - [Troubleshooting](https://docs.talk2view.com/troubleshooting): common first-run issues
 - [Intended use](https://docs.talk2view.com/intended-use): not a medical device and not for diagnosis or treatment; don't send PHI or other patient-identifiable data; links to the Terms of Use and Privacy Policy
 

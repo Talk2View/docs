@@ -28,7 +28,7 @@ See [Intended use](./intended-use.md) and the
 
 ## What your app offers
 
-The **Voice** card under **Settings** in the dashboard has three controls:
+The **Voice** card under **Settings** in the dashboard has four controls:
 
 - **Default voice model** — the voice model a call runs on when the end-user hasn't chosen
   one. Guests (anonymous users) always get it. Gemini Live is the default until you change
@@ -38,6 +38,9 @@ The **Voice** card under **Settings** in the dashboard has three controls:
   instructions and your users' speech reach ElevenLabs only after you tick it.
 - **Premium voice models** — the voice models that need a paid plan. End-users who aren't
   on a paid plan get your default voice model instead.
+- **Faster ElevenLabs replies (Eleven Realtime)** — shown once ElevenLabs is ticked.
+  ElevenLabs answers sooner, in the same voice, and your app's calls move to it from the
+  next ElevenLabs call. Off until you tick it.
 
 The default voice model has to be ticked in **Voice models in this app**, and it can't be
 premium. At least one voice model must stay on.
@@ -65,6 +68,36 @@ import { VOICE_PREFERENCE_URL } from '@talk2view/sdk';
 Older SDKs only run Gemini Live, so they always get it, whatever the default or preferred
 voice model. If your app doesn't offer Gemini Live, they show "Voice isn’t available
 right now." So leave Gemini Live ticked until your apps are on 0.23.0 or newer.
+
+Call captions need 0.24.0 or newer.
+
+## Languages
+
+An ElevenLabs call starts in the browser's language when it is one of these 15, and in
+English when it isn't: English, Spanish, French, German, Italian, Portuguese, Dutch,
+Japanese, Korean, Chinese, Vietnamese, Hindi, Arabic, Russian, and Turkish. When the
+end-user speaks another of the 15, the call switches to it.
+
+Gemini Live replies in whatever language it hears.
+
+## Call captions
+
+Call captions are the words of a voice call, from both sides, shown in the voice panel
+above the voice button while the call runs. They're on by default in the packaged chat,
+on both voice models. They're cleared when the call ends and stored nowhere.
+
+To turn them off, set `features={{ callCaptions: false }}` on the packaged chat, or
+`callCaptions={false}` on a standalone `<VoiceButton>`:
+
+```tsx
+import { Talk2ViewChatLauncher, VoiceButton } from '@talk2view/sdk/chat';
+
+<Talk2ViewChatLauncher partnerKey="pk_live_..." features={{ callCaptions: false }} />;
+<VoiceButton client={t2v} callCaptions={false} />;
+```
+
+If you build your own voice UI, the SDK's `transcript` event carries the same words. Since
+0.24.0, the assistant's lines in that event carry no tone cue, such as `[sad]`.
 
 ## When a voice model can't take the call
 
