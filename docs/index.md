@@ -21,6 +21,7 @@ to get started — we'll set you up.
 - **[Getting started](./getting-started.md)** — install, drop in the chat, ship.
 - **[Authentication](./authentication.md)** — your partner key + how your users sign in.
 - **[Concepts](./concepts.md)** — how the pieces fit: tools, the interrupt/resume loop, sessions.
+- **[Voice](./voice.md)** — the voice button, the two voice models, and your CSP.
 - **[Troubleshooting](./troubleshooting.md)** — the usual first-run snags.
 - **[Intended use](./intended-use.md)** — what Talk2View is for, and what data to keep out of it.
 
