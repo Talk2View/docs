@@ -69,7 +69,8 @@ Older SDKs only run Gemini Live, so they always get it, whatever the default or 
 voice model. If your app doesn't offer Gemini Live, they show "Voice isn’t available
 right now." So leave Gemini Live ticked until your apps are on 0.23.0 or newer.
 
-Call captions need 0.24.0 or newer.
+Call captions need 0.24.0 or newer. Apps on 0.23.0 get Eleven Realtime's tone cues, such
+as `[sad]`, in the `transcript` event; 0.24.0 removes them.
 
 ## Languages
 
