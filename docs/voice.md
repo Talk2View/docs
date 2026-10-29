@@ -40,7 +40,8 @@ The **Voice** card under **Settings** in the dashboard has four controls:
   on a paid plan get your default voice model instead.
 - **Faster ElevenLabs replies (Eleven Realtime)** — shown once ElevenLabs is ticked.
   ElevenLabs answers sooner, in the same voice, and your app's calls move to it from the
-  next ElevenLabs call. Off until you tick it.
+  next ElevenLabs call. But it's weaker at noticing when an end-user changes language
+  mid-call, and may reply in the wrong language. Off until you tick it.
 
 The default voice model has to be ticked in **Voice models in this app**, and it can't be
 premium. At least one voice model must stay on.
@@ -69,15 +70,16 @@ Older SDKs only run Gemini Live, so they always get it, whatever the default or 
 voice model. If your app doesn't offer Gemini Live, they show "Voice isn’t available
 right now." So leave Gemini Live ticked until your apps are on 0.23.0 or newer.
 
-Call captions need 0.24.0 or newer. Apps on 0.23.0 get Eleven Realtime's tone cues, such
-as `[sad]`, in the `transcript` event; 0.24.0 removes them.
+Call captions need 0.24.0 or newer. Apps on 0.23.0 get ElevenLabs' tone cues, such as
+`[sad]`, in the `transcript` event; 0.24.0 removes them.
 
 ## Languages
 
 An ElevenLabs call starts in the browser's language when it is one of these 15, and in
 English when it isn't: English, Spanish, French, German, Italian, Portuguese, Dutch,
 Japanese, Korean, Chinese, Vietnamese, Hindi, Arabic, Russian, and Turkish. When the
-end-user speaks another of the 15, the call switches to it.
+end-user speaks another of the 15, the call switches to it. Eleven Realtime is weaker at
+this: it may hear the new language as a different one, and switch to that.
 
 Gemini Live replies in whatever language it hears.
 
