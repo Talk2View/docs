@@ -78,8 +78,9 @@ Call captions need 0.24.0 or newer. Apps on 0.23.0 get ElevenLabs' tone cues, su
 An ElevenLabs call starts in the browser's language when it is one of these 15, and in
 English when it isn't: English, Spanish, French, German, Italian, Portuguese, Dutch,
 Japanese, Korean, Chinese, Vietnamese, Hindi, Arabic, Russian, and Turkish. When the
-end-user speaks another of the 15, the call switches to it. Eleven Realtime is weaker at
-this: it may hear the new language as a different one, and switch to that.
+end-user speaks another of the 15, the call switches to it. ElevenLabs works out the
+language from the speech, so it can mistake one language for another and switch to that.
+Eleven Realtime does this more often.
 
 Gemini Live replies in whatever language it hears.
 
