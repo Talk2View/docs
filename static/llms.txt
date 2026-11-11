@@ -8,12 +8,40 @@
 - [Authentication](https://docs.talk2view.com/authentication): the partner key and end-user sign-in
 - [Concepts](https://docs.talk2view.com/concepts): tools, the interrupt/resume loop, sessions
 - [Voice](https://docs.talk2view.com/voice): the voice button, the Gemini Live and ElevenLabs voice models, partner controls, Eleven Realtime, languages, call captions, and CSP hosts
+- [Errors](https://docs.talk2view.com/errors): every error the Talk2View API sends, and what to do about it
 - [Troubleshooting](https://docs.talk2view.com/troubleshooting): common first-run issues
 - [Intended use](https://docs.talk2view.com/intended-use): not a medical device and not for diagnosis or treatment; don't send PHI or other patient-identifiable data; links to the Terms of Use and Privacy Policy
 
-## SDKs and reference
-- [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript): @talk2view/sdk on npm
-- [Python SDK](https://github.com/Talk2View/talk2view-python): talk2view on PyPI (pip install talk2view); needs Python 3.10 or later
+## TypeScript SDK
+@talk2view/sdk on npm (npm install @talk2view/sdk). These pages describe version 0.25.0.
+- [TypeScript SDK](https://docs.talk2view.com/typescript): install, the entry points, the versioning policy and supported environments
+- [The packaged chat](https://docs.talk2view.com/typescript/chat): the branded chat from @talk2view/sdk/chat, as a full pane or a floating launcher
+- [What loads at runtime](https://docs.talk2view.com/typescript/runtime): what each entry point fetches, for your Content Security Policy
+- [The previous panel (/ui)](https://docs.talk2view.com/typescript/ui-panel): the deprecated @talk2view/sdk/ui chat panel and its components
+- [React provider and hooks](https://docs.talk2view.com/typescript/react): the headless provider and hooks, for building your own chat UI
+- [assistant-ui runtime](https://docs.talk2view.com/typescript/assistant-ui): render assistant-ui's stock Thread on Talk2View
+- [The Talk2View client](https://docs.talk2view.com/typescript/client): the framework-agnostic class, its core API, configuration, system prompts, rendering replies and chat sessions
+- [Defining tools](https://docs.talk2view.com/typescript/tools): the tool schema, parameter types, the execute function and return_direct
+- [Token storage](https://docs.talk2view.com/typescript/token-storage): what the SDK keeps in localStorage, what logging out clears, and the security trade-offs
+- [Error handling](https://docs.talk2view.com/typescript/errors): the error classes the SDK throws and the fields they carry
+- [Full integration example](https://docs.talk2view.com/typescript/example): a complete example in a drawing app
+- [TypeScript types](https://docs.talk2view.com/typescript/types): the types each entry point exports
+
+## Python SDK
+talk2view on PyPI (pip install talk2view); needs Python 3.10 or later. These pages describe version 0.4.0.
+- [Python SDK](https://docs.talk2view.com/python): install, a first chat, and how tool calls run in your app
+- [The Talk2View client](https://docs.talk2view.com/python/client): the constructor, chat and session methods, Capabilities, partner config, models, preferences, voice and ChatEvent
+- [Authentication and token storage](https://docs.talk2view.com/python/authentication): email, Apple and Google sign-in, anonymous demo sessions, and where tokens are kept
+- [Tools and approvals](https://docs.talk2view.com/python/tools): the @tool decorator, tool permissions, approvals, and running handlers on the host's main thread
+- [Skills](https://docs.talk2view.com/python/skills): user skills from code or from folders of SKILL.md files
+- [ChatController](https://docs.talk2view.com/python/chat-controller): the conversation model behind a chat view: state, commands, callback rules and turn timings
+- [Chat UI server](https://docs.talk2view.com/python/chat-ui): the bundled chat page served from 127.0.0.1
+- [Errors](https://docs.talk2view.com/python/errors): the exception classes the SDK raises and the fields they carry
+- [3D Slicer integration](https://docs.talk2view.com/python/slicer): token storage, tools and streaming in a 3D Slicer extension
+
+## Source and reference
+- [talk2view-typescript](https://github.com/Talk2View/talk2view-typescript): source and runnable examples for the TypeScript SDK
+- [talk2view-python](https://github.com/Talk2View/talk2view-python): source for the Python SDK
 - [API reference](https://engine.talk2view.com/docs): the HTTP endpoints. It does not describe the streamed (SSE) chat events; the SDKs parse them (see the ChatEvent type in each)
 
 ## Get access

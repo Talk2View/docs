@@ -83,6 +83,8 @@ const config: Config = {
             {label: 'Getting started', to: '/getting-started'},
             {label: 'Authentication', to: '/authentication'},
             {label: 'Concepts', to: '/concepts'},
+            {label: 'TypeScript SDK', to: '/typescript'},
+            {label: 'Python SDK', to: '/python'},
           ],
         },
         {

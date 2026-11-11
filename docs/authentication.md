@@ -26,6 +26,13 @@ partner secret key; there is no `sk_` key to keep private.
 
 It's sent on each request as the `X-T2V-Partner-Key` header.
 
+Inject the key via an environment variable at build time (e.g. `VITE_T2V_PARTNER_KEY`).
+
+There is no self-serve key creation or rotation. To rotate your key,
+[contact Talk2View](https://talk2view.com/resources/contact). Rotation issues a new
+key and retires the old one within about a minute, with no planned overlap, so plan
+the switch with us.
+
 ### Allowed websites and sign-in
 
 Your partner key is a public identifier, not a secret: anyone can copy it from your
