@@ -10,6 +10,15 @@ npm install
 
 **Note**: feel free to use the package manager of your choice.
 
+## SDK reference pages
+
+`docs/typescript/` and `docs/python/` carry the content of the two SDK READMEs
+([talk2view-typescript](https://github.com/Talk2View/talk2view-typescript) and
+[talk2view-python](https://github.com/Talk2View/talk2view-python)), split into pages.
+The first page of each section names the SDK version it describes. When an SDK
+release changes its README, update the matching pages here, that version line, and
+the version in `static/llms.txt`.
+
 ## Local Development
 
 ```bash

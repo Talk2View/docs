@@ -27,6 +27,6 @@ to get started — we'll set you up.
 
 ## SDKs & reference
 
-- [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — `@talk2view/sdk` on npm
-- [Python SDK](https://github.com/Talk2View/talk2view-python) — `talk2view` on PyPI
+- [TypeScript SDK](./typescript/index.md) — `@talk2view/sdk` on npm: the packaged chat, hooks, the client, tools and errors
+- [Python SDK](./python/index.md) — `talk2view` on PyPI: the client, tools, the chat UI server and 3D Slicer
 - [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK

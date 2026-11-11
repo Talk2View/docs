@@ -32,7 +32,7 @@ pip install talk2view
 ```
 
 The rest of this page uses the TypeScript SDK. For Python, carry on with the
-[quick start in the Python SDK's README](https://github.com/Talk2View/talk2view-python#quick-start).
+[Python SDK quick start](./python/index.md#quick-start).
 
 ## 3. Drop in the chat
 
@@ -77,10 +77,11 @@ confirmation screen. See [Authentication](./authentication.md).
 ## Going further
 
 Building headless or outside React? The lower-level `Talk2View` client, tool
-registration, and the streamed chat events are covered in the TypeScript SDK
-repository. The API reference lists the HTTP endpoints but doesn't describe the events
-in the stream.
+registration, and the streamed chat events are covered in the
+[TypeScript SDK](./typescript/index.md) section. The API reference lists the HTTP
+endpoints but doesn't describe the events in the stream.
 
-- [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — source, runnable examples, full API
-- [Python SDK](https://github.com/Talk2View/talk2view-python) — source, quick start, full API
+- [TypeScript SDK](./typescript/index.md) — the packaged chat, React hooks, the client, tools, errors
+- [Python SDK](./python/index.md) — quick start, the client, tools, the chat UI server, 3D Slicer
+- Source on GitHub: [talk2view-typescript](https://github.com/Talk2View/talk2view-typescript), with runnable examples, and [talk2view-python](https://github.com/Talk2View/talk2view-python)
 - [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK
