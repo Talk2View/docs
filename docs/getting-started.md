@@ -25,6 +25,15 @@ device, and your app shouldn't send it patient data.
 npm install @talk2view/sdk
 ```
 
+Building in Python? The Python SDK needs Python 3.10 or later:
+
+```bash
+pip install talk2view
+```
+
+The rest of this page uses the TypeScript SDK. For Python, carry on with the
+[quick start in the Python SDK's README](https://github.com/Talk2View/talk2view-python#quick-start).
+
 ## 3. Drop in the chat
 
 The fastest path is the packaged chat — one component and one stylesheet. Give it a
@@ -73,5 +82,5 @@ repository. The API reference lists the HTTP endpoints but doesn't describe the 
 in the stream.
 
 - [TypeScript SDK](https://github.com/Talk2View/talk2view-typescript) — source, runnable examples, full API
-- Python SDK — coming soon
+- [Python SDK](https://github.com/Talk2View/talk2view-python) — source, quick start, full API
 - [API reference](https://engine.talk2view.com/docs) — the HTTP endpoints; for the streamed chat events, see the SDK
